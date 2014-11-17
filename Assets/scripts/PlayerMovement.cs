@@ -16,15 +16,14 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{	
-		if(Input.GetKeyDown(KeyCode.W))
+		if(Input.GetKey(KeyCode.W))
 		{
-			if(jump == true)
-			{
-				//rigidbody.AddForce(Vector3.up * jumpSpeed);
-				rigidbody.velocity = new Vector3 (0,10,0);
+			transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+		}
 
-				jump = false;
-			}
+		if(Input.GetKey(KeyCode.S))
+		{
+			transform.Translate(Vector3.forward * - movementSpeed * Time.deltaTime);
 		}
 
 		if(Input.GetKey(KeyCode.D))
@@ -37,11 +36,26 @@ public class PlayerMovement : MonoBehaviour
 		{
 			transform.Translate(Vector3.right * - movementSpeed * Time.deltaTime);
 		}
-		//print ("im working");
+
+		if(Input.GetKeyDown(KeyCode.Space))
+		{
+			if(jump == true)
+			{
+				//rigidbody.AddForce(Vector3.up * jumpSpeed);
+				rigidbody.velocity = new Vector3 (0,10,0);
+				
+				jump = false;
+			}
+		}
+
 	}
 	void OnCollisionEnter(Collision collide)
 	{
 		if(collide.gameObject.tag == "Ground")
+		{
+			jump = true;
+		}
+		if(collide.gameObject.tag == "Wall")
 		{
 			jump = true;
 		}
