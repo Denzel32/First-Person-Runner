@@ -26,8 +26,9 @@ public class PlayerRespawn : MonoBehaviour
 		{
 			spawnCount--;
 			Vector3 newposition = transform.position;
-			newposition.x = 2;
-			newposition.y = 2;
+			newposition.x = 0;
+			newposition.y = 0;
+			newposition.z = 2;
 			transform.position = newposition;
 			//Destroy(this.gameObject);
 			//Instantiate(spawnpoint, new Vector3(2,2,0), Quaternion.identity);
