@@ -22,7 +22,7 @@ public class PlayerRespawn : MonoBehaviour
 	
 	void Respawn()
 	{
-		if(transform.position.y <= -10)
+		if(transform.position.y <= -50)
 		{
 			spawnCount--;
 			Vector3 newposition = transform.position;
@@ -34,7 +34,7 @@ public class PlayerRespawn : MonoBehaviour
 			//Instantiate(spawnpoint, new Vector3(2,2,0), Quaternion.identity);
 			if(spawnCount == 0)
 			{
-				Destroy(this.gameObject);
+				//Destroy(this.gameObject);
 				Application.LoadLevel("gameoverscreen");
 			}
 

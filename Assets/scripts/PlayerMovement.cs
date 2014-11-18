@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 	public float movementSpeed = 50f;
 	private bool jump = true;
 
-
 	// Use this for initialization
 	void Start () {
 	
