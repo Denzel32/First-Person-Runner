@@ -2,16 +2,14 @@
 using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
-
-	public Transform Player;
-
-	void Start () 
-	{
 	
-	}
+	public Texture2D crosshairImage;
 
-	void Update () 
+	void OnGUI()
 	{
-		this.transform.position = new Vector3 (Player.transform.position.x, Player.transform.position.y + 1.4f, Player.transform.position.z - -1);
+		// Croshairs
+		float xMin = (Screen.width / 2) - (crosshairImage.width / 2);
+		float yMin = (Screen.height / 2) - (crosshairImage.height / 2);
+		GUI.DrawTexture (new Rect (xMin, yMin, crosshairImage.width, crosshairImage.height), crosshairImage);
 	}
 }

@@ -12,6 +12,12 @@
 /*.userprefs
 /*.pidb
 /*.booproj
+/*.wav
+/*.meta
+/Assets/8 Bit Retro Rampage Free/*.
+/Assets/Scenes/*.
+/Assets/Standard Assets/*.
+/Assets/Standard Assets (Mobile)/*.
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
