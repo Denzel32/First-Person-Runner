@@ -19,6 +19,6 @@ public class ObstacleSpawn : MonoBehaviour
 
 	void CreateMyInstance()
 	{
-		Instantiate(Obstacle, new Vector3(0,5,20),Quaternion.identity);
+		//Instantiate(Obstacle, new Vector3(0,5,20),Quaternion.identity);
 	}
 }

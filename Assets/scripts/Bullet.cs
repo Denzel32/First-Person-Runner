@@ -2,35 +2,31 @@
 using System.Collections;
 
 public class Bullet : MonoBehaviour {
-
-	private float speed = 0.5f;
-	public Transform Explosion;
+	
 	private int Desptimer;
-
-	private Score scoreVar;
-	private GUIText Scoretext;
-
-	void Start()
-	{
-		scoreVar = GameObject.FindGameObjectWithTag("GUITextTag").GetComponent<Score> ();
-	}
+	private float speed = 1f;
+	public AudioClip hitsound;
 
 	void Update () 
 	{
-		this.transform.Translate (Vector3.up * speed);
+		this.transform.Translate(Vector3.up * speed);
 		Desptimer ++;
-		if (Desptimer >= 350)
+		if (Desptimer >= 130)
 			Destroy (this.gameObject);
 	}
 
 	void OnTriggerEnter(Collider other)
-	{
-		Destroy(this.gameObject);		
-		Instantiate (Explosion, transform.position, transform.rotation);
-		if (other.gameObject.tag == "Boulder") 
-		{
+	{	
+
+		if (other.gameObject.tag == "Rock") 
+		{	
+			audio.Play();
 			Destroy (other.gameObject);
-			scoreVar.ScoreNum ++;
+		}
+		if (other.gameObject.tag == "RockTwo") 
+		{	
+			audio.Play();
+			Destroy (other.gameObject);
 		}
 	}
 }

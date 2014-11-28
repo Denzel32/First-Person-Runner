@@ -18,10 +18,10 @@ public class GameOver : MonoBehaviour
 	void OnGUI()
 	{	
 		GUI.skin.button = restartButStyle;
-		GUI.Label(new Rect(Screen.width / 2,Screen.height / 2 - 100 , 100 , 100 ), "You died");
+		//GUI.Label(new Rect(Screen.width / 2,Screen.height / 2  , 100 , 100 ), "You died");
 
 
-		if(GUI.Button (new Rect(Screen.width / 2, Screen.height / 2 - 50, 200, 50), ""))
+		if(GUI.Button (new Rect(Screen.width / 2, Screen.height / 2, 200, 50), ""))
 		{	
 			Application.LoadLevel("playscene");
 		}
