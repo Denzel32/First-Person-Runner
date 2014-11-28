@@ -4,18 +4,13 @@ using System.Collections;
 public class Shooting : MonoBehaviour {
 
 	public Transform BarrelEnd;
-	public Transform BulletObj;
-
-	void Start () {
-	
-	}
-	
+	public Transform Poof;
 
 	void Update () 
 	{
 		if (Input.GetKeyDown (KeyCode.Mouse0)) 
 		{
-			Instantiate (BulletObj, BarrelEnd.position, BarrelEnd.rotation);
+			Instantiate (Poof, BarrelEnd.position, BarrelEnd.rotation);
 		}
 	}
 }

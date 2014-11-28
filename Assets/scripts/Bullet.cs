@@ -2,19 +2,13 @@
 using System.Collections;
 
 public class Bullet : MonoBehaviour {
-
-	public float bulletSpeed = 25f;
-	private int Desptimer;
-
-	void Start () {
 	
-	}
+	private int Desptimer;
 
 	void Update () 
 	{
 		Desptimer ++;
-		this.transform.Translate (Vector3.up * bulletSpeed);
-		if (Desptimer >= 200)
+		if (Desptimer >= 130)
 			Destroy (this.gameObject);
 	}
 
@@ -24,6 +18,5 @@ public class Bullet : MonoBehaviour {
 		{
 			Destroy (other.gameObject);
 		}
-		Destroy (this.gameObject);
 	}
 }
